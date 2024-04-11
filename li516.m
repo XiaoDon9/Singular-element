@@ -15,7 +15,7 @@ cord_glb = cord_loc + 1;
 clear col_rep3 col_rep2 col_rep col2 col
 
 for i = 1:8
-    h(i) = g(cord_loc(i, :));
+    h(i) = g(r,s,t,cord_loc(i, :));
 end
 
 h1234 = 0;
@@ -74,10 +74,7 @@ end
 % 替换实际数值
 % substitutedExpr = subs(expr, {x, y}, {2, 3});
 
-function g = g(cord_i)
-    global r
-    global s
-    global t
+function g = g(r,s,t,cord_i)
     g = G(r, cord_i(1)) * G(s, cord_i(2)) * G(t, cord_i(3));
 end
 

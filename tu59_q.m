@@ -29,7 +29,7 @@ simplified_h = simplify(h);
 % % ans
 % % [0, 0, 0, 0, 0, 0, 0, 0]
 
-cord_glb = cord_loc;
+cord_glb = cord_loc+1;
 cord_glb(5, 1) = cord_glb(5, 1) + 0.5;
 cord_glb(8, 2) = cord_glb(8, 2) + 0.5;
 
@@ -43,7 +43,7 @@ J_inv = inv(J);
 substitutedExpr = simplify(subs(J_inv, {r}, {1}));
 
 dNdr = diff(simplified_h, r);
-dNds = diff(simplified_h, r);
+dNds = diff(simplified_h, s);
 
 DNDx = J \ [dNdr; dNds];
 clear dNdr dNds
